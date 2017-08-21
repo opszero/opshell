@@ -8,7 +8,7 @@ RUN wget -O terraform.zip https://releases.hashicorp.com/terraform/0.9.9/terrafo
 RUN unzip -a terraform.zip
 RUN mv terraform /usr/bin/terraform
 
-RUN wget -O packer.zip https://releases.hashicorp.com/packer/1.0.2/packer_1.0.2_linux_amd64.zip
+RUN wget -O packer.zip https://releases.hashicorp.com/packer/1.0.4/packer_1.0.4_linux_amd64.zip
 RUN unzip -a packer.zip
 RUN mv packer /usr/bin/packer
 
