@@ -24,7 +24,7 @@ RUN unzip -a packer.zip
 RUN mv packer /usr/bin/packer
 
 # Kubernetes Kops
-RUN wget https://github.com/kubernetes/kops/releases/download/1.7.-1/kops-linux-amd64
+RUN wget https://github.com/kubernetes/kops/releases/download/1.7.0/kops-linux-amd64
 RUN chmod +x kops-linux-amd64
 RUN mv kops-linuxNaN /usr/bin/kops
 
