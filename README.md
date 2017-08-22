@@ -8,9 +8,13 @@ multiple environments and clients.
  - Packer
  - Terraform
 
- - [ ] Audit Trail
-
 # Usage
+
+Pull the image with:
+
+```
+docker pull opszero/opshell
+```
 
 opshell requires `Docker` to run. When run it mounts the `$CLIENT_DIR` as
 `$HOME` and mounts the `$WORK_DIR` under `/work`
