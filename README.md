@@ -1,11 +1,14 @@
 # opshell
 
 Docker image intended to make it easier to do operations work against
-multiple environments and clients. It makes it easier to handle different
-client.
+multiple environments and clients.
+
+ - AWS CLI
+ - Google Cloud SDK
+ - Packer
+ - Terraform
 
  - [ ] Audit Trail
- - [ ] Common DevOps Tools
 
 # Usage
 
