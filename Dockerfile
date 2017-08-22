@@ -1,7 +1,7 @@
 FROM ubuntu:16.04
 
 RUN apt-get update -y
-RUN apt-get install -y python-pip wget curl unzip zsh build-essential gnupg
+RUN apt-get install -y python-pip wget curl unzip zsh build-essential gnupg jq
 RUN pip install --upgrade pip
 
 # AWS
@@ -26,6 +26,10 @@ RUN mv packer /usr/bin/packer
 # Kubernetes Kops
 RUN wget https://github.com/kubernetes/kops/releases/download/1.7.0/kops-linux-amd64
 RUN chmod +x kops-linux-amd64
-RUN mv kops-linuxNaN /usr/bin/kops
+RUN mv kops-linux-amd64 /usr/bin/kops
+
+RUN wget https://storage.googleapis.com/kubernetes-release/release/$(shell curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd63/kubectl
+RUN chmod +x kubectl
+RUN sudo mv kubectl /usr/bin/kubectl
 
 CMD /bin/zsh
