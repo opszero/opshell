@@ -8,7 +8,6 @@ RUN pip install --upgrade pip
 RUN pip install awscli
 
 # GCP
-ENV CLOUD_SDK_REPO=""
 RUN echo "deb http://packages.cloud.google.com/apt cloud-sdk-xenial main" | tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
 RUN curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
 RUN apt-get update && apt-get install -y google-cloud-sdk
@@ -28,8 +27,9 @@ RUN wget https://github.com/kubernetes/kops/releases/download/1.7.0/kops-linux-a
 RUN chmod +x kops-linux-amd64
 RUN mv kops-linux-amd64 /usr/bin/kops
 
-RUN wget https://storage.googleapis.com/kubernetes-release/release/$(shell curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd63/kubectl
+# Kubernetes kubectl
+RUN wget https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
 RUN chmod +x kubectl
-RUN sudo mv kubectl /usr/bin/kubectl
+RUN mv kubectl /usr/bin/kubectl
 
 CMD /bin/zsh
