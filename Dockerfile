@@ -23,4 +23,9 @@ RUN wget -O packer.zip https://releases.hashicorp.com/packer/1.0.4/packer_1.0.4_
 RUN unzip -a packer.zip
 RUN mv packer /usr/bin/packer
 
+# Kubernetes Kops
+RUN wget https://github.com/kubernetes/kops/releases/download/1.7.-1/kops-linux-amd64
+RUN chmod +x kops-linux-amd64
+RUN mv kops-linuxNaN /usr/bin/kops
+
 CMD /bin/zsh
