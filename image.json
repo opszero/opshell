@@ -1,0 +1,39 @@
+{
+    "variables": {
+    },
+    "builders": [
+        {
+            "type": "docker",
+            "image": "ubuntu:16.04",
+            "commit": true,
+            "changes": [
+                "CMD /bin/zsh"
+            ]
+        }
+    ],
+    "provisioners": [
+        {
+            "scripts": [
+                "ami/base.sh"
+            ],
+            "type": "shell"
+        },
+        {
+            "type": "shell",
+            "inline": [
+                "rm -rf /home/admin/.ssh/authorized_keys",
+                "rm -rf /root/.ssh/authorized_keys"
+            ]
+        }
+    ],
+    "post-processors": [
+        [
+            {
+                "type": "docker-tag",
+                "repository": "opszero/opshell",
+                "tag": "latest"
+            },
+            "docker-push"
+        ]
+    ]
+}
