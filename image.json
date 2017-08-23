@@ -1,5 +1,9 @@
 {
     "variables": {
+        "region": "{{ env `AWS_REGION` }}",
+        "aws_access_key_id": "{{ env `AWS_ACCESS_KEY_ID` }}",
+        "aws_secret_access_key": "{{ env `AWS_SECRET_ACCESS_KEY` }}",
+        "gcp_project_id": "{{ env `GCP_PROJECT_ID` }}"
     },
     "builders": [
         {
@@ -7,8 +11,38 @@
             "image": "ubuntu:16.04",
             "commit": true,
             "changes": [
-                "CMD /bin/zsh"
+                "USER opszero"
             ]
+        },
+        {
+            "type": "googlecompute",
+            "account_file": "account.json",
+            "project_id": "{{ user `gcp_project_id` }}",
+            "source_image_family": "ubuntu-1604-lts",
+            "zone": "us-west1-a",
+            "disk_size": 20,
+            "ssh_username": "opszero"
+        },
+        {
+            "type": "amazon-ebs",
+            "region": "{{ user `region` }}",
+            "source_ami_filter": {
+                "filters": {
+                    "virtualization-type": "hvm",
+                    "root-device-type": "ebs",
+                    "name": "ami-1d4e7a66"
+                },
+                "most_recent": true
+            },
+            "instance_type": "t2.medium",
+            "ssh_username": "admin",
+            "enhanced_networking": true,
+            "ami_name": "opszero-opshell-{{isotime `2006-01-02` | clean_ami_name}}-{{timestamp}}",
+            "access_key": "{{user `aws_access_key_id`}}",
+            "secret_key": "{{user `aws_secret_access_key`}}",
+            "tags": {
+                "image": "opsZero-Opshell"
+            }
         }
     ],
     "provisioners": [
@@ -21,8 +55,8 @@
         {
             "type": "shell",
             "inline": [
-                "rm -rf /home/admin/.ssh/authorized_keys",
-                "rm -rf /root/.ssh/authorized_keys"
+                "sudo rm -rf /home/admin/.ssh/authorized_keys",
+                "sudo rm -rf /root/.ssh/authorized_keys"
             ]
         }
     ],
@@ -31,9 +65,13 @@
             {
                 "type": "docker-tag",
                 "repository": "opszero/opshell",
-                "tag": "latest"
+                "tag": "latest",
+                "only": ["docker"]
             },
-            "docker-push"
+            {
+                "type": "docker-push",
+                "only": ["docker"]
+            }
         ]
     ]
 }
