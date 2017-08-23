@@ -1,5 +1,7 @@
 # opshell
 
+<img src="http://assets.opszero.com.s3.amazonaws.com/images/Opshell.png" width="200px" />
+
 Docker image intended to make it easier to do operations work against
 multiple environments and clients.
 
