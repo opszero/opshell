@@ -1,5 +1,5 @@
 sudo apt-get update -y
-sudo apt-get install -y python-pip wget curl unzip zsh build-essential gnupg jq tmux sudo
+sudo apt-get install -y python-pip wget curl unzip zsh build-essential gnupg jq tmux sudo git-core
 sudo pip install --upgrade pip
 
 # AWS
