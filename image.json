@@ -19,8 +19,11 @@
             "account_file": "account.json",
             "project_id": "{{ user `gcp_project_id` }}",
             "source_image_family": "ubuntu-1604-lts",
+            "instance_name": "opszero-opshell-{{isotime `2006-01-02`}}-{{timestamp}}",
+            "disk_name": "opszero-opshell-{{isotime `2006-01-02`}}-{{timestamp}}",
+            "image_name": "opszero-opshell-{{isotime `2006-01-02`}}-{{timestamp}}",
             "zone": "us-west1-a",
-            "disk_size": 20,
+            "disk_size": 50,
             "ssh_username": "opszero"
         },
         {
@@ -41,7 +44,8 @@
     "provisioners": [
         {
             "scripts": [
-                "ami/base.sh"
+                "ami/base.sh",
+                "ami/docker.sh"
             ],
             "type": "shell"
         },
