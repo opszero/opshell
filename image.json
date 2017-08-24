@@ -26,16 +26,9 @@
         {
             "type": "amazon-ebs",
             "region": "{{ user `region` }}",
-            "source_ami_filter": {
-                "filters": {
-                    "virtualization-type": "hvm",
-                    "root-device-type": "ebs",
-                    "name": "ami-1d4e7a66"
-                },
-                "most_recent": true
-            },
-            "instance_type": "t2.medium",
-            "ssh_username": "admin",
+            "source_ami": "ami-cd0f5cb6",
+            "instance_type": "t2.micro",
+            "ssh_username": "ubuntu",
             "enhanced_networking": true,
             "ami_name": "opszero-opshell-{{isotime `2006-01-02` | clean_ami_name}}-{{timestamp}}",
             "access_key": "{{user `aws_access_key_id`}}",
@@ -56,6 +49,7 @@
             "type": "shell",
             "inline": [
                 "sudo rm -rf /home/admin/.ssh/authorized_keys",
+                "sudo rm -rf /home/ubuntu/.ssh/authorized_keys",
                 "sudo rm -rf /root/.ssh/authorized_keys"
             ]
         }
