@@ -1,5 +1,11 @@
+echo $(env)
+if [ $PACKER_BUILDER_TYPE = "docker" ]
+then
+    apt-get update -y && apt-get install -y sudo
+fi
+
 sudo apt-get update -y
-sudo apt-get install -y python-pip wget curl unzip zsh build-essential gnupg jq tmux sudo git-core
+sudo apt-get install -y apt-transport-https python-pip wget curl unzip zsh build-essential gnupg jq tmux sudo git-core
 sudo pip install --upgrade pip
 
 # AWS

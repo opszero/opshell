@@ -4,6 +4,9 @@ build:
 run: build
 	docker run -it opszero/opshell
 
+docker:
+	packer build -only=docker image.json
+
 aws-marketplace:
 	# Build Image with Packer for AWS Marketplace
 	AWS_REGION=us-east-1 \
