@@ -16,6 +16,11 @@ echo "deb http://packages.cloud.google.com/apt cloud-sdk-xenial main" | sudo tee
 curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
 sudo apt-get update && sudo apt-get install -y google-cloud-sdk
 
+# Azure
+echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ wheezy main" | sudo tee /etc/apt/sources.list.d/azure-cli.list
+sudo apt-key adv --keyserver packages.microsoft.com --recv-keys 417A0893
+sudo apt-get update && sudo apt-get install -y azure-cli
+
 # Terraform
 wget -O terraform.zip https://releases.hashicorp.com/terraform/0.10.2/terraform_0.10.2_linux_amd64.zip
 unzip -a terraform.zip
