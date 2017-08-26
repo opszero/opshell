@@ -7,8 +7,11 @@ multiple environments and clients.
 
  - AWS CLI
  - Google Cloud SDK
+ - Microsoft Azure SDK
  - Packer
  - Terraform
+ - Git
+ - Docker
 
 # Usage
 
