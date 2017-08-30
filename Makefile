@@ -7,6 +7,17 @@ run: build
 docker:
 	packer build -only=docker image.json
 
+azure-marketplace-setup:
+	# https://docs.microsoft.com/en-us/azure/virtual-machines/linux/build-image-with-packer
+	az group create -n opszero-opshell -l eastus
+	az ad sp create-for-rbac --query [appId,password,tenant]
+	az account show --query [id] --output tsv
+
+
+azure-marketplace:
+	packer build -only=azure-arm image.json
+
+
 aws-marketplace:
 	# Build Image with Packer for AWS Marketplace
 	AWS_REGION=us-east-1 \
