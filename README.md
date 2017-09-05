@@ -10,6 +10,7 @@ multiple environments and clients.
  - Microsoft Azure SDK
  - Packer
  - Terraform
+ - Vagrant
  - Git
  - Docker
 
