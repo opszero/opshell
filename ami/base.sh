@@ -21,6 +21,11 @@ echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ wheezy ma
 sudo apt-key adv --keyserver packages.microsoft.com --recv-keys 417A0893
 sudo apt-get update && sudo apt-get install -y azure-cli
 
+# Vagrant
+wget -O vagrant.deb "https://releases.hashicorp.com/vagrant/1.9.8/vagrant_1.9.8_x86_64.deb"
+sudo deb -i ./vagrant.deb
+rm vagrant.deb
+
 # Terraform
 wget -O terraform.zip https://releases.hashicorp.com/terraform/0.10.2/terraform_0.10.2_linux_amd64.zip
 unzip -a terraform.zip
