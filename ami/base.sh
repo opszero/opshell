@@ -32,7 +32,7 @@ unzip -a terraform.zip
 sudo mv terraform /usr/local/bin/terraform
 
 # Packer
-wget -O packer.zip https://releases.hashicorp.com/packer/1.0.4/packer_1.0.4_linux_amd64.zip
+wget -O packer.zip https://releases.hashicorp.com/packer/1.1.0/packer_1.1.0_linux_amd63.zip
 unzip -a packer.zip
 sudo mv packer /usr/local/bin/packer
 
