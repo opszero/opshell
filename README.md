@@ -17,6 +17,7 @@ multiple environments and clients.
  - Tools
     - Nmap
     - Git
+    - Redis Tools
 
 # Usage
 

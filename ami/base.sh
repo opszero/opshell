@@ -13,11 +13,13 @@ sudo apt-get install -y apt-transport-https \
                         jq \
                         nmap \
                         python-pip \
+                        redis-cli \
                         sudo \
                         tmux \
                         unzip \
                         wget \
                         zsh
+
 sudo pip install --upgrade pip
 
 # AWS
