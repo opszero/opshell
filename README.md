@@ -20,6 +20,7 @@ multiple environments and clients.
     - Nmap
     - PostgreSQL Client
     - Redis Tools
+    - Sysdig
 
 # Usage
 

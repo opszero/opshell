@@ -16,6 +16,7 @@ sudo apt-get install -y apt-transport-https \
                         postgresql-client \
                         python-pip \
                         redis-cli \
+                        sysdig \
                         sudo \
                         tmux \
                         unzip \
