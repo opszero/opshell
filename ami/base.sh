@@ -11,6 +11,7 @@ sudo apt-get install -y apt-transport-https \
                         git-core \
                         gnupg \
                         jq \
+                        mercurial \
                         nmap \
                         python-pip \
                         redis-cli \

@@ -10,13 +10,14 @@ multiple environments and clients.
     - Google Cloud SDK
     - Microsoft Azure SDK
  - DevOps
+    - Docker
     - Packer
     - Terraform
     - Vagrant
-    - Docker
  - Tools
-    - Nmap
     - Git
+    - Mercurial
+    - Nmap
     - Redis Tools
 
 # Usage
