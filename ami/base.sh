@@ -13,6 +13,7 @@ sudo apt-get install -y apt-transport-https \
                         jq \
                         mercurial \
                         nmap \
+                        postgresql-client \
                         python-pip \
                         redis-cli \
                         sudo \

@@ -18,6 +18,7 @@ multiple environments and clients.
     - Git
     - Mercurial
     - Nmap
+    - PostgreSQL Client
     - Redis Tools
 
 # Usage
