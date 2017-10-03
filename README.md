@@ -15,6 +15,7 @@ multiple environments and clients.
     - Terraform
     - Vagrant
  - Tools
+    - CSVKit
     - Git
     - lsof
     - Mercurial
