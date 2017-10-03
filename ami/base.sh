@@ -5,7 +5,21 @@ then
 fi
 
 sudo apt-get update -y
-sudo apt-get install -y apt-transport-https python-pip wget curl unzip zsh build-essential gnupg jq tmux sudo git-core
+sudo apt-get install -y apt-transport-https \
+                        build-essential \
+                        curl \
+                        git-core \
+                        gnupg \
+                        jq \
+                        nmap \
+                        python-pip \
+                        redis-cli \
+                        sudo \
+                        tmux \
+                        unzip \
+                        wget \
+                        zsh
+
 sudo pip install --upgrade pip
 
 # AWS

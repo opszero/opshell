@@ -5,14 +5,19 @@
 Docker image intended to make it easier to do operations work against
 multiple environments and clients.
 
- - AWS CLI
- - Google Cloud SDK
- - Microsoft Azure SDK
- - Packer
- - Terraform
- - Vagrant
- - Git
- - Docker
+ - Cloud
+    - AWS CLI
+    - Google Cloud SDK
+    - Microsoft Azure SDK
+ - DevOps
+    - Packer
+    - Terraform
+    - Vagrant
+    - Docker
+ - Tools
+    - Nmap
+    - Git
+    - Redis Tools
 
 # Usage
 
