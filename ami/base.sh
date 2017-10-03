@@ -11,9 +11,14 @@ sudo apt-get install -y apt-transport-https \
                         git-core \
                         gnupg \
                         jq \
+                        lsof \
+                        mercurial \
+                        mysql-client \
                         nmap \
+                        postgresql-client \
                         python-pip \
                         redis-cli \
+                        sysdig \
                         sudo \
                         tmux \
                         unzip \
@@ -23,7 +28,7 @@ sudo apt-get install -y apt-transport-https \
 sudo pip install --upgrade pip
 
 # AWS
-sudo pip install awscli
+sudo pip install awscli csvkit
 
 # GCP
 echo "deb http://packages.cloud.google.com/apt cloud-sdk-xenial main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
