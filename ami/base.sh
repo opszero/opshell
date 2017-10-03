@@ -17,7 +17,7 @@ sudo apt-get install -y apt-transport-https \
                         nmap \
                         postgresql-client \
                         python-pip \
-                        redis-cli \
+                        redis-tools \
                         sysdig \
                         sudo \
                         tmux \
@@ -31,8 +31,10 @@ sudo pip install --upgrade pip
 sudo pip install awscli csvkit
 
 # GCP
-echo "deb http://packages.cloud.google.com/apt cloud-sdk-xenial main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
-curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+# Create an environment variable for the correct distribution
+export CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"
+sudo echo "deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+sudo curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
 sudo apt-get update && sudo apt-get install -y google-cloud-sdk
 
 # Azure
