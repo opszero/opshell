@@ -12,6 +12,7 @@ sudo apt-get install -y apt-transport-https \
                         gnupg \
                         jq \
                         mercurial \
+                        mysql-client \
                         nmap \
                         postgresql-client \
                         python-pip \
