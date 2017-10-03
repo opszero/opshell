@@ -16,6 +16,7 @@ multiple environments and clients.
     - Vagrant
  - Tools
     - Git
+    - lsof
     - Mercurial
     - MySQL Client
     - Nmap

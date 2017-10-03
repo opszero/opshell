@@ -11,6 +11,7 @@ sudo apt-get install -y apt-transport-https \
                         git-core \
                         gnupg \
                         jq \
+                        lsof \
                         mercurial \
                         mysql-client \
                         nmap \
