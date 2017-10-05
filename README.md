@@ -27,7 +27,19 @@ multiple environments and clients.
 
 # Usage
 
-Pull the image with:
+## AWS AMI
+
+```
+VPC_ID=vpc-aaaaaaaa \
+SUBNET_ID=subnet-aaaaaaaa \
+AWS_REGION=us-west-2 \
+AWS_ACCESS_KEY_ID=$(aws configure get picnichealth.aws_access_key_id) \
+AWS_SECRET_ACCESS_KEY=$(aws configure get picnichealth.aws_secret_access_key) \
+packer build -only=amazon-ebs image.json
+```
+
+
+## Docker
 
 ```
 docker pull opszero/opshell
@@ -40,7 +52,7 @@ opshell requires `Docker` to run. When run it mounts the `$CLIENT_DIR` as
 opshell $CLIENT_DIR $WORK_DIR
 ```
 
-# Building Images
+## Building All Images
 
 Build using Packer.
 
