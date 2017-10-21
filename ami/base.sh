@@ -18,6 +18,7 @@ sudo apt-get install -y apt-transport-https \
                         postgresql-client \
                         python-pip \
                         redis-tools \
+                        sqlite \
                         sysdig \
                         sudo \
                         tmux \
