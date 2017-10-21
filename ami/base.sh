@@ -75,3 +75,7 @@ sudo apt-add-repository ppa:ansible/ansible
 sudo apt-get update -y
 sudo apt-get install ansible -y
 
+# Misc
+
+# Install SoftLayer
+sudo pip install softlayer
