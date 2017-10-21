@@ -67,3 +67,15 @@ sudo mv kops-linux-amd64 /usr/local/bin/kops
 wget https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
 chmod +x kubectl
 sudo mv kubectl /usr/local/bin/kubectl
+
+# Install Ansible
+sudo apt-get update
+sudo apt-get install software-properties-common
+sudo apt-add-repository ppa:ansible/ansible
+sudo apt-get update -y
+sudo apt-get install ansible -y
+
+# Misc
+
+# Install SoftLayer
+sudo pip install softlayer
