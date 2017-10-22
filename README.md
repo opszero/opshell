@@ -14,6 +14,7 @@ multiple environments and clients.
     - Chef
     - Docker
     - Packer
+    - Puppet
     - Terraform
     - Vagrant
  - Tools

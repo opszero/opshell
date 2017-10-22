@@ -80,6 +80,12 @@ sudo wget -O chef.deb https://packages.chef.io/files/stable/chef/13.5.3/ubuntu/1
 sudo dpkg -i ./chef.deb
 sudo rm chef.deb
 
+# Puppet
+sudo wget https://apt.puppetlabs.com/puppetlabs-release-trusty.deb
+sudo dpkg -i puppetlabs-release-$(lsb_release -c -s).deb
+sudo apt-get update
+sudo rm puppetlabs-release-$(lsb_release -c -s).deb
+
 # Misc
 
 # Install SoftLayer
