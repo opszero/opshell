@@ -23,6 +23,7 @@ multiple environments and clients.
     - Mercurial
     - MySQL Client
     - Nmap
+    - NodeJS
     - PostgreSQL Client
     - Redis Tools
     - SQLite

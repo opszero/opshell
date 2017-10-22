@@ -90,3 +90,7 @@ sudo rm puppetlabs-release-$(lsb_release -c -s).deb
 
 # Install SoftLayer
 sudo pip install softlayer
+
+# Install Node
+curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+sudo apt-get install -y nodejs
