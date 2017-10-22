@@ -75,7 +75,22 @@ sudo apt-add-repository ppa:ansible/ansible
 sudo apt-get update -y
 sudo apt-get install ansible -y
 
+# Chef
+sudo wget -O chef.deb https://packages.chef.io/files/stable/chef/13.5.3/ubuntu/16.04/chef_13.5.3-1_amd64.deb
+sudo dpkg -i ./chef.deb
+sudo rm chef.deb
+
+# Puppet
+sudo wget https://apt.puppetlabs.com/puppetlabs-release-trusty.deb
+sudo dpkg -i puppetlabs-release-$(lsb_release -c -s).deb
+sudo apt-get update
+sudo rm puppetlabs-release-$(lsb_release -c -s).deb
+
 # Misc
 
 # Install SoftLayer
 sudo pip install softlayer
+
+# Install Node
+curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+sudo apt-get install -y nodejs

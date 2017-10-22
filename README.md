@@ -11,8 +11,10 @@ multiple environments and clients.
     - Microsoft Azure SDK
  - DevOps
     - Ansible
+    - Chef
     - Docker
     - Packer
+    - Puppet
     - Terraform
     - Vagrant
  - Tools
@@ -21,6 +23,7 @@ multiple environments and clients.
     - Mercurial
     - MySQL Client
     - Nmap
+    - NodeJS
     - PostgreSQL Client
     - Redis Tools
     - SQLite
