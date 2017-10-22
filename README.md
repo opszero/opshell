@@ -11,6 +11,7 @@ multiple environments and clients.
     - Microsoft Azure SDK
  - DevOps
     - Ansible
+    - Chef
     - Docker
     - Packer
     - Terraform

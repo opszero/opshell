@@ -75,6 +75,11 @@ sudo apt-add-repository ppa:ansible/ansible
 sudo apt-get update -y
 sudo apt-get install ansible -y
 
+# Chef
+sudo wget -O chef.deb https://packages.chef.io/files/stable/chef/13.5.3/ubuntu/16.04/chef_13.5.3-1_amd64.deb
+sudo dpkg -i ./chef.deb
+sudo rm chef.deb
+
 # Misc
 
 # Install SoftLayer
