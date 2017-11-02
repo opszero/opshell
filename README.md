@@ -24,6 +24,7 @@ multiple environments and clients.
     - MySQL Client
     - Nmap
     - NodeJS
+    - Rust
     - PostgreSQL Client
     - Redis Tools
     - SQLite
