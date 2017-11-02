@@ -86,9 +86,6 @@ sudo dpkg -i puppetlabs-release-$(lsb_release -c -s).deb
 sudo apt-get update
 sudo rm puppetlabs-release-$(lsb_release -c -s).deb
 
-# Rust
-sudo curl https://sh.rustup.rs -sSf | sh
-
 # Misc
 
 # Install SoftLayer
