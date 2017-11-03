@@ -70,10 +70,15 @@ sudo mv kubectl /usr/local/bin/kubectl
 
 # Install Ansible
 sudo apt-get update
-sudo apt-get install software-properties-common
+sudo apt-get install software-properties-common -y
 sudo apt-add-repository ppa:ansible/ansible
 sudo apt-get update -y
 sudo apt-get install ansible -y
+
+# Install Rust
+echo "Just before Rust"
+sudo curl https://sh.rustup.rs -sSf | sh -y
+echo "Just after Rust"
 
 # Chef
 sudo wget -O chef.deb https://packages.chef.io/files/stable/chef/13.5.3/ubuntu/16.04/chef_13.5.3-1_amd64.deb
@@ -83,7 +88,7 @@ sudo rm chef.deb
 # Puppet
 sudo wget https://apt.puppetlabs.com/puppetlabs-release-trusty.deb
 sudo dpkg -i puppetlabs-release-$(lsb_release -c -s).deb
-sudo apt-get update
+sudo apt-get update -y
 sudo rm puppetlabs-release-$(lsb_release -c -s).deb
 
 # Misc
