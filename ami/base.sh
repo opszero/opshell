@@ -1,4 +1,5 @@
 echo $(env)
+
 if [ $PACKER_BUILDER_TYPE = "docker" ]
 then
     apt-get update -y && apt-get install -y sudo
@@ -76,9 +77,7 @@ sudo apt-get update -y
 sudo apt-get install ansible -y
 
 # Install Rust
-echo "Just before Rust"
-sudo curl https://sh.rustup.rs -sSf | sh -y
-echo "Just after Rust"
+sudo curl -sf -L https://static.rust-lang.org/rustup.sh | sh
 
 # Chef
 sudo wget -O chef.deb https://packages.chef.io/files/stable/chef/13.5.3/ubuntu/16.04/chef_13.5.3-1_amd64.deb
