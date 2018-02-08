@@ -29,15 +29,13 @@ sudo apt-get install -y apt-transport-https \
 
 
 # Go
-echo 'golang installation begin'
 wget https://storage.googleapis.com/golang/go1.9.2.linux-amd64.tar.gz
 sudo tar -xvf go1.9.2.linux-amd64.tar.gz
 sudo mv go /usr/local
 export GOROOT=/usr/local/go
-export GOPATH=$HOME/Projects/Proj1
+export GOPATH=$HOME
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 go version
-echo 'golang installation end'
 
 sudo pip install --upgrade pip
 
