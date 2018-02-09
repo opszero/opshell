@@ -27,6 +27,16 @@ sudo apt-get install -y apt-transport-https \
                         wget \
                         zsh
 
+
+# Go
+wget https://storage.googleapis.com/golang/go1.9.2.linux-amd64.tar.gz
+sudo tar -xvf go1.9.2.linux-amd64.tar.gz
+sudo mv go /usr/local
+export GOROOT=/usr/local/go
+export GOPATH=$HOME
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+go version
+
 sudo pip install --upgrade pip
 
 # AWS
