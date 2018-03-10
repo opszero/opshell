@@ -38,6 +38,7 @@ make
 sudo make install
 ruby -v
 cd
+rm -R ruby-2.5.0/ ruby-2.5.0.tar.gz
 
 # Go
 wget https://storage.googleapis.com/golang/go1.9.2.linux-amd64.tar.gz
