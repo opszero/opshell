@@ -28,6 +28,9 @@ sudo apt-get install -y apt-transport-https \
                         zsh
 
 
+#Envkey
+curl -s https://raw.githubusercontent.com/envkey/envkey-source/master/install.sh | bash
+
 # Go
 wget https://storage.googleapis.com/golang/go1.9.2.linux-amd64.tar.gz
 sudo tar -xvf go1.9.2.linux-amd64.tar.gz
