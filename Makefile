@@ -25,6 +25,10 @@ aws-marketplace:
 	AWS_SECRET_ACCESS_KEY=$(shell aws configure get opszero.aws_secret_access_key) \
 	packer build -only=amazon-ebs image.json
 
+gcp:
+	packer build -only=googlecompute image.json
+
+
 mac-deps:
 	brew install packer
 	brew cask install docker
