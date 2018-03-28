@@ -27,6 +27,8 @@ sudo apt-get install -y apt-transport-https \
                         wget \
                         zsh
 
+#Envkey
+curl -s https://raw.githubusercontent.com/envkey/envkey-source/master/install.sh | bash
 
 # Ruby
 cd
