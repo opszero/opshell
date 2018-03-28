@@ -27,9 +27,20 @@ sudo apt-get install -y apt-transport-https \
                         wget \
                         zsh
 
-
 #Envkey
 curl -s https://raw.githubusercontent.com/envkey/envkey-source/master/install.sh | bash
+
+# Ruby
+cd
+wget http://ftp.ruby-lang.org/pub/ruby/2.5/ruby-2.5.0.tar.gz
+tar -xzvf ruby-2.5.0.tar.gz
+cd ruby-2.5.0/
+./configure
+make
+sudo make install
+ruby -v
+cd
+rm -R ruby-2.5.0/ ruby-2.5.0.tar.gz
 
 # Go
 wget https://storage.googleapis.com/golang/go1.9.2.linux-amd64.tar.gz
