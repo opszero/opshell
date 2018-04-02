@@ -23,6 +23,7 @@ multiple environments and clients.
     - Mercurial
     - MySQL Client
     - Nmap
+    - Ruby 
     - NodeJS
     - Rust
     - PostgreSQL Client
@@ -31,6 +32,7 @@ multiple environments and clients.
     - SoftLayer
     - Sysdig
     - lsof
+    - Envkey
 
 # Usage
 
