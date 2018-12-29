@@ -30,23 +30,13 @@ sudo apt-get install -y apt-transport-https \
 #Envkey
 curl -s https://raw.githubusercontent.com/envkey/envkey-source/master/install.sh | bash
 
+cd -
+
 # Ruby
-cd
-wget http://ftp.ruby-lang.org/pub/ruby/2.5/ruby-2.5.0.tar.gz
-tar -xzvf ruby-2.5.0.tar.gz
-cd ruby-2.5.0/
-./configure
-make
-sudo make install
-ruby -v
-cd
-rm -R ruby-2.5.0/ ruby-2.5.0.tar.gz
+snap install ruby --classic
 
 # Go
-wget https://storage.googleapis.com/golang/go1.9.2.linux-amd64.tar.gz
-sudo tar -xvf go1.9.2.linux-amd64.tar.gz
-sudo mv go /usr/local
-export GOROOT=/usr/local/go
+snap install go --classic
 export GOPATH=$HOME
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 go version
@@ -74,17 +64,17 @@ sudo deb -i ./vagrant.deb
 rm vagrant.deb
 
 # Terraform
-wget -O terraform.zip https://releases.hashicorp.com/terraform/0.10.2/terraform_0.10.2_linux_amd64.zip
+wget -O terraform.zip https://releases.hashicorp.com/terraform/0.11.11/terraform_0.11.11_linux_amd64.zip
 unzip -a terraform.zip
 sudo mv terraform /usr/local/bin/terraform
 
 # Packer
-wget -O packer.zip https://releases.hashicorp.com/packer/1.1.0/packer_1.1.0_linux_amd63.zip
+wget -O packer.zip https://releases.hashicorp.com/packer/1.3.3/packer_1.3.3_linux_amd63.zip
 unzip -a packer.zip
 sudo mv packer /usr/local/bin/packer
 
 # Kubernetes Kops
-wget https://github.com/kubernetes/kops/releases/download/1.7.0/kops-linux-amd64
+wget https://github.com/kubernetes/kops/releases/download/1.10.1/kops-linux-amd64
 chmod +x kops-linux-amd64
 sudo mv kops-linux-amd64 /usr/local/bin/kops
 
@@ -93,32 +83,10 @@ wget https://storage.googleapis.com/kubernetes-release/release/$(curl -s https:/
 chmod +x kubectl
 sudo mv kubectl /usr/local/bin/kubectl
 
-# Install Ansible
-sudo apt-get update
-sudo apt-get install software-properties-common -y
-sudo apt-add-repository ppa:ansible/ansible
-sudo apt-get update -y
-sudo apt-get install ansible -y
-
 # Install Rust
 sudo curl -sf -L https://static.rust-lang.org/rustup.sh | sh
 
-# Chef
-sudo wget -O chef.deb https://packages.chef.io/files/stable/chef/13.5.3/ubuntu/16.04/chef_13.5.3-1_amd64.deb
-sudo dpkg -i ./chef.deb
-sudo rm chef.deb
-
-# Puppet
-sudo wget https://apt.puppetlabs.com/puppetlabs-release-trusty.deb
-sudo dpkg -i puppetlabs-release-$(lsb_release -c -s).deb
-sudo apt-get update -y
-sudo rm puppetlabs-release-$(lsb_release -c -s).deb
-
 # Misc
 
-# Install SoftLayer
-sudo pip install softlayer
-
 # Install Node
-curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
-sudo apt-get install -y nodejs
+sudo snap install node --channel=10/stable --classic

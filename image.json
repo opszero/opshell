@@ -14,13 +14,11 @@
         "azure_tenant_id": "{{ env `AZURE_TENANT_ID` }}",
         "azure_subscription_id": "{{ env `AZURE_SUBSCRIPTION_ID` }}"
     },
-    "builders": [
-        {
+    "builders": [{
             "type": "docker",
-            "image": "ubuntu:16.04",
+            "image": "ubuntu:18.04",
             "commit": true,
-            "changes": [
-            ]
+            "changes": []
         },
         {
             "type": "googlecompute",
@@ -81,8 +79,7 @@
             "vm_size": "Standard_DS2_v2"
         }
     ],
-    "provisioners": [
-        {
+    "provisioners": [{
             "scripts": [
                 "ami/base.sh",
                 "ami/docker.sh"
@@ -107,8 +104,7 @@
         }
     ],
     "post-processors": [
-        [
-            {
+        [{
                 "type": "docker-tag",
                 "repository": "opszero/opshell",
                 "tag": "latest",
