@@ -7,7 +7,7 @@ on:
 
 jobs:
   packer:
-    runs-on: self-hosted
+    runs-on: ubuntu
     name: packer
     permissions:
       contents: read
