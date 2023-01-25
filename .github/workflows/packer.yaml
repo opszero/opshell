@@ -1,0 +1,41 @@
+name: AWS AMI using Packer Config
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  packer:
+    runs-on: ubuntu-latest
+    name: packer
+    permissions:
+      contents: read
+      id-token: write
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: arn:aws:iam::451305228097:role/github-deployer
+          aws-region: us-east-1
+
+      # Initialize Packer templates
+      - name: Setup `packer`
+        uses: hashicorp/setup-packer@main
+        with:
+          version: "latest"
+
+      - name: Run `packer init`
+        run: "packer init ./image.json"
+
+      # validate templates
+      - name: Run `packer validate`
+        run: "packer validate -syntax-only ./image.json"
+
+      # build artifact
+      - name: Run `packer build`
+        run: "packer build -color=false -on-error=cleanup -only=amazon-ebs -force ./image.json"
