@@ -38,4 +38,4 @@ jobs:
 
       # build artifact
       - name: Run `packer build`
-        run: "packer build -color=false -on-error=abort -only=amazon-ebs -force ./image.json"
+        run: "packer build -color=false -on-error=cleanup -only=amazon-ebs -force ./image.json"
