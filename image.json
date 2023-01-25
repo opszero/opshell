@@ -48,7 +48,7 @@
             "ssh_username": "ubuntu",
             "associate_public_ip_address": true,
 
-            "ami_name": "opszero-opshell-{{isotime `2006-01-02`}}-{{timestamp}}",
+            "ami_name": "opszero-opshell-{{isotime `2006-01-02` | clean_ami_name}}-{{timestamp}}",
             "access_key": "{{user `aws_access_key_id`}}",
             "secret_key": "{{user `aws_secret_access_key`}}",
             "encrypt_boot": true,
