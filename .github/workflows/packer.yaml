@@ -30,12 +30,12 @@ jobs:
           version: "latest"
 
       - name: Run `packer init`
-        run: "packer init ./amis.pkr.hcl"
+        run: "packer init ./image.json"
 
       # validate templates
       - name: Run `packer validate`
-        run: "packer validate -syntax-only ./amis.pkr.hcl"
+        run: "packer validate -syntax-only ./image.json"
 
       # build artifact
       - name: Run `packer build`
-        run: "packer build -color=false -on-error=abort -force ./amis.pkr.hcl"
+        run: "packer build -color=false -on-error=abort -only=amazon-ebs -force ./image.json"
