@@ -7,7 +7,7 @@ on:
 
 jobs:
   packer:
-    runs-on: ubuntu
+    runs-on: ubuntu-latest
     name: packer
     permissions:
       contents: read
