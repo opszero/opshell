@@ -2,8 +2,10 @@ name: AWS AMI using Packer Config
 
 on:
   push:
-    branches:
-      - main
+    tags:
+      - '*'
+  release:
+    types: [created]
 
 jobs:
   packer:
